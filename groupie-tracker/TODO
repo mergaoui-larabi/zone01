@@ -1,0 +1,17 @@
+io.ReadAll
+os.Stat
+
+template.New
+Templates.ParseGlob
+r.URL.Path
+r.URL.Query()
+Templates.ExecuteTemplate
+resp.WriteHeader(status)
+resp.Write
+r.Method
+http.ServeFile
+http.HandleFunc
+url.QueryEscape
+scrapThumbnail(path string)
+http.NewRequest
+Header.Add
