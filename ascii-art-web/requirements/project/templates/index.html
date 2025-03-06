@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Welcome to ASCII Art Web">
+    <title>ASCII ART WEB</title>
+    <link rel="stylesheet" href="/static/index.css">
+    
+</head>
+
+<body>
+    <h1>ASCII ART WEB</h1>
+    <div class="container">
+        <form method="POST">
+                <label for="str-input"> Enter text: <div class="counter" id="inputCounter">0 characters</div></label>
+                
+                <textarea class="fixed-textarea" maxlength="100" type="text" id="str-input" name="before-generate" placeholder="Maximum number of characters is 100" required></textarea> <br>
+                
+                <label for="banner">Choose a banner:</label>
+                <div>
+                    <input type="radio" id="standard" name="banner" value="standard" checked>
+                    <label for="standard">Standard</label>
+                </div>
+                <div>
+                    <input type="radio" id="shadow" name="banner" value="shadow">
+                    <label for="shadow">Shadow</label>
+                </div>
+                <div>
+                    <input type="radio" id="thinkertoy" name="banner" value="thinkertoy">
+                    <label for="thinkertoy">Thinkertoy</label>
+                </div>
+
+                <button formaction="/ascii-art" type="submit">Submit</button>
+                <button formaction="/export" type="submit">Export</button>
+                
+                <button type="reset">Reset</button>
+                <script>
+                    const textArea = document.getElementById('str-input');
+                    const inputCounter = document.getElementById('inputCounter');
+
+                    textArea.addEventListener('input',function() {
+                        const counter = textArea.value.length;
+                        inputCounter.textContent = `${counter} character${counter !==1 ? 's' : ''}`
+                    });
+                </script>
+        </form>
+    </div>
+</body>
+
+</html>
